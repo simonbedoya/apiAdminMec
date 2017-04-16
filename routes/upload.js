@@ -13,11 +13,13 @@ const path = require('path');
 const fs = require('fs');
 const uploadController = require('../controller/upload_controller');
 const async = require('async');
+const socketIoClient = require('socket.io-client');
 
 router.post('/file', function (req,res) {
     let form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
-
+        let type = fields.type;
+        let pk_sensor = req.decoded.pkSensor;
         console.log(JSON.stringify(files));
         if(err) return res.status(500).send(JSON.parse(response.msg("005", "Internal error", null)));
 
@@ -86,6 +88,10 @@ router.post('/file', function (req,res) {
                 }
             }
             if(correct === arrOut.length){
+                let socket = socketIoClient('socket.plataformamec.com');
+                socket.on('connect', function () {
+                    socket.emit('uploadFile',`{"pk_sensor": "${pk_sensor}", "type": "${type}"}`);
+                });
                 res.status(200).send(JSON.parse(response.msg("001", "Files inserted correctly", null)));
             }else{
                 res.status(202).send(JSON.parse(response.msg("002", "No Files inserted correctly", null)));
