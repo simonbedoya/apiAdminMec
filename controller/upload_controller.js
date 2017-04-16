@@ -14,18 +14,14 @@ module.exports = {
     insertFile: function (pk_sensor, path_file, file_name, pk_location, type) {
         return new Promise(
             function (fullfill) {
-                console.log(file_name);
                 let file_name_array = file_name.split("_");
                 let date = functions.convertDate(file_name_array[0]);
                 let hour;
                 if(type === "FILE") {
                     hour = functions.convertHour(file_name_array[1]);
                 }else{
-                    console.log("Event");
-                    console.log(file_name_array[1]);
                     hour = functions.convertHourFull(file_name_array[1]);
                 }
-                console.log("hora del archivo: "+hour);
                 let reg_date = functions.datetime();
                 db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: date, hour: hour, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error insert", data: null});
@@ -42,18 +38,14 @@ module.exports = {
     updateFile: function (pk_sensor, path_file, file_name,type) {
       return new Promise(
           function (fullfill) {
-              console.log(file_name);
               let file_name_array = file_name.split("_");
               let date = functions.convertDate(file_name_array[0]);
               let hour;
               if(type === "FILE") {
                   hour = functions.convertHour(file_name_array[1]);
               }else{
-                  console.log("Event");
-                  console.log(file_name_array[1]);
                   hour = functions.convertHourFull(file_name_array[1]);
               }
-              console.log("hora del archivo: "+hour);
               let reg_date = functions.datetime();
               db.query(template(sqlQuery.query_updateFile,{pk_sensor: pk_sensor, path_file: path_file, date: date, hour: hour, reg_date: reg_date, axis: file_name_array[2], type: type}), function (err, result) {
                   if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error update", data: null});
@@ -71,18 +63,14 @@ module.exports = {
     verifyExistFile: function (file_name,pk_sensor, type) {
         return new Promise(
             function (fullfill) {
-                console.log(file_name);
                 let file_name_array = file_name.split("_");
                 let date = functions.convertDate(file_name_array[0]);
                 let hour;
                 if(type === "FILE") {
                     hour = functions.convertHour(file_name_array[1]);
                 }else{
-                    console.log("Event");
-                    console.log(file_name_array[1]);
                     hour = functions.convertHourFull(file_name_array[1]);
                 }
-                console.log("hora del archivo: "+hour);
                 db.query(template(sqlQuery.query_verifyExistFile,{pk_sensor: pk_sensor, date: date, hour: hour, axis: file_name_array[2], type: type}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error exist file", data: null});
 
