@@ -84,6 +84,10 @@ exports.convertHour = function convertHour(hour) {
     return String(`${hour}:00:00`);
 };
 
+exports.convertHourFull = function convertHour(hour,minute,second) {
+    return String(`${hour}:${minute}:${second}`);
+};
+
 exports.fileExists = function fileExists(file, cb) {
     fs.stat(file, function(err, stats){
         if (err) {
