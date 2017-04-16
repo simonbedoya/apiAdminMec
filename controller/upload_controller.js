@@ -23,8 +23,7 @@ module.exports = {
                 }else{
                     console.log("Event");
                     console.log(file_name_array[1]);
-                    let hourarray = file_name_array[1].split(".");
-                    hour = functions.convertHourFull(hourarray[0],hourarray[1],hourarray[2]);
+                    hour = functions.convertHourFull(file_name_array[1]);
                 }
                 console.log("hora del archivo: "+hour);
                 let reg_date = functions.datetime();
@@ -52,8 +51,7 @@ module.exports = {
               }else{
                   console.log("Event");
                   console.log(file_name_array[1]);
-                  let hourarray = file_name_array[1].split(".");
-                  hour = functions.convertHourFull(hourarray[0],hourarray[1],hourarray[2]);
+                  hour = functions.convertHourFull(file_name_array[1]);
               }
               console.log("hora del archivo: "+hour);
               let reg_date = functions.datetime();
@@ -82,8 +80,7 @@ module.exports = {
                 }else{
                     console.log("Event");
                     console.log(file_name_array[1]);
-                    let hourarray = file_name_array[1].split(".");
-                    hour = functions.convertHourFull(hourarray[0],hourarray[1],hourarray[2]);
+                    hour = functions.convertHourFull(file_name_array[1]);
                 }
                 console.log("hora del archivo: "+hour);
                 db.query(template(sqlQuery.query_verifyExistFile,{pk_sensor: pk_sensor, date: date, hour: hour, axis: file_name_array[2], type: type}), function (err, result) {
