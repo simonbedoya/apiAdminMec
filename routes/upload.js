@@ -91,8 +91,9 @@ router.post('/file', function (req,res) {
                 let socket = socketIoClient('socket.plataformamec.com');
                 socket.on('connect', function () {
                     socket.emit('uploadFile',`{"pk_sensor": "${pk_sensor}", "type": "${type}"}`);
+                    socket.disconnect();
                 });
-                socket.disconnect();
+
                 res.status(200).send(JSON.parse(response.msg("001", "Files inserted correctly", null)));
             }else{
                 res.status(202).send(JSON.parse(response.msg("002", "No Files inserted correctly", null)));
