@@ -85,9 +85,9 @@ exports.convertHour = function convertHour(hour) {
 };
 
 exports.convertHourFull = function convertHour(time) {
-    let hour = time.slice(0,1);
-    let minute = time.slice(2,3);
-    let second = time.slice(3,4);
+    let hour = time.slice(0,2);
+    let minute = time.slice(2,4);
+    let second = time.slice(4,6);
     return String(`${hour}:${minute}:${second}`);
 };
 
