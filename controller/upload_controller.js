@@ -20,6 +20,8 @@ module.exports = {
                 if(type === "FILE") {
                     hour = functions.convertHour(file_name_array[1]);
                 }else{
+                    console.log("Event");
+                    console.log(file_name_array[1]);
                     let hourarray = file_name_array[1].split(".");
                     hour = functions.convertHourFull(hourarray[0],hourarray[1],hourarray[2]);
                 }
@@ -46,6 +48,8 @@ module.exports = {
               if(type === "FILE") {
                   hour = functions.convertHour(file_name_array[1]);
               }else{
+                  console.log("Event");
+                  console.log(file_name_array[1]);
                   let hourarray = file_name_array[1].split(".");
                   hour = functions.convertHourFull(hourarray[0],hourarray[1],hourarray[2]);
               }
@@ -73,6 +77,8 @@ module.exports = {
                 if(type === "FILE") {
                     hour = functions.convertHour(file_name_array[1]);
                 }else{
+                    console.log("Event");
+                    console.log(file_name_array[1]);
                     let hourarray = file_name_array[1].split(".");
                     hour = functions.convertHourFull(hourarray[0],hourarray[1],hourarray[2]);
                 }
