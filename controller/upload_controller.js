@@ -14,6 +14,7 @@ module.exports = {
     insertFile: function (pk_sensor, path_file, file_name, pk_location, type) {
         return new Promise(
             function (fullfill) {
+                console.log(file_name);
                 let file_name_array = file_name.split("_");
                 let date = functions.convertDate(file_name_array[0]);
                 let hour;
@@ -42,6 +43,7 @@ module.exports = {
     updateFile: function (pk_sensor, path_file, file_name,type) {
       return new Promise(
           function (fullfill) {
+              console.log(file_name);
               let file_name_array = file_name.split("_");
               let date = functions.convertDate(file_name_array[0]);
               let hour;
@@ -71,6 +73,7 @@ module.exports = {
     verifyExistFile: function (file_name,pk_sensor, type) {
         return new Promise(
             function (fullfill) {
+                console.log(file_name);
                 let file_name_array = file_name.split("_");
                 let date = functions.convertDate(file_name_array[0]);
                 let hour;
