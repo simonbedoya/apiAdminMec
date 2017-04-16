@@ -17,13 +17,15 @@ const async = require('async');
 router.post('/file', function (req,res) {
     let form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
+
         console.log(JSON.stringify(files));
         if(err) return res.status(500).send(JSON.parse(response.msg("005", "Internal error", null)));
+
         let arrOut=[];
         async.filter(files, function(file, callback) {
             let file_name_o = file.name.split('.');
 
-            uploadController.verifyExistFile(file_name_o[0], req.decoded.pkSensor).then(function (data) {
+            uploadController.verifyExistFile(file_name_o[0], req.decoded.pkSensor, fields.type).then(function (data) {
                 if (data.code === "001") {
                     let path_file = data.data.UPLOADPATH;
                     let pk_location = data.data.PK_LOCATION;
@@ -31,7 +33,7 @@ router.post('/file', function (req,res) {
                     uploadController.uploadFiles(file, path_file).then(function (data) {
                         if(data.code === "001"){
                             //actualizar registro
-                            uploadController.insertFile(req.decoded.pkSensor,data.data.filePath,file_name_o[0],pk_location).then(function (data) {
+                            uploadController.insertFile(req.decoded.pkSensor,data.data.filePath,file_name_o[0],pk_location,fields.type).then(function (data) {
                                 if(data.code === "001"){
                                     arrOut.push(data);
                                     callback(null,null);
@@ -51,7 +53,7 @@ router.post('/file', function (req,res) {
                     uploadController.uploadFiles(file, path_file).then(function (data) {
                         if(data.code === "001"){
                             //actualizar registro
-                            uploadController.updateFile(req.decoded.pkSensor,data.data.filePath,file_name_o[0]).then(function (data) {
+                            uploadController.updateFile(req.decoded.pkSensor,data.data.filePath,file_name_o[0],fields.type).then(function (data) {
                                 if(data.code === "001"){
                                     arrOut.push(data);
                                     callback(null,null);
