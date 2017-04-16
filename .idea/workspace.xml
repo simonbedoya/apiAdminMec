@@ -343,7 +343,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492351241625</updated>
-      <workItem from="1492351243248" duration="12137000" />
+      <workItem from="1492351243248" duration="12151000" />
     </task>
     <task id="LOCAL-00001" summary="16/04/2017">
       <created>1492358972451</created>
@@ -398,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12137000" />
+    <option name="totallyTimeSpent" value="12151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,7 +437,8 @@
     <MESSAGE value="16/04/2017 5" />
     <MESSAGE value="16/04/2017 6" />
     <MESSAGE value="16/04/2017 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="16/04/2017 7" />
+    <MESSAGE value="16/04/2017 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="16/04/2017 8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
