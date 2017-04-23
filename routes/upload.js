@@ -17,6 +17,7 @@ const socketIoClient = require('socket.io-client');
 
 router.post('/file', function (req,res) {
     let form = new formidable.IncomingForm();
+    form.maxFieldsSize = 10 * 1024 * 1024;
     form.parse(req, function(err, fields, files) {
         let type = fields.type;
         let pk_sensor = req.decoded.pkSensor;
