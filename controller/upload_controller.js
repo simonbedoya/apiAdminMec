@@ -23,7 +23,9 @@ module.exports = {
                     hour = functions.convertHourFull(file_name_array[1]);
                 }
                 let dateArray = date.split("/");
-                let hourArray = hour.split("/");
+                console.log(dateArray);
+                let hourArray = hour.split(":");
+                console.log(hourArray);
                 let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
                 let dateFinal = dateUTC.toString();
                 console.log("date final " +dateFinal);
