@@ -27,11 +27,11 @@ module.exports = {
                 let hourArray = hour.split(":");
                 console.log(hourArray);
                 let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
-                let dateFinal = dateUTC.toLocaleString();
-
+                let dateFinal = dateUTC.toLocaleDateString("es-CO",{year:"2-digit",month:"2-digit", day:"2-digit"});
+                let hourFinal = dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
                 console.log("date final " +dateUTC.toLocaleDateString("es-CO",{year:"2-digit",month:"2-digit", day:"2-digit"}) + " " + dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false}));
                 let reg_date = functions.datetime();
-                db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: date, hour: date, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
+                db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: dateFinal, hour: hourFinal, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error insert", data: null});
 
                     if(result.affectedRows !== 0){
