@@ -22,8 +22,13 @@ module.exports = {
                 }else{
                     hour = functions.convertHourFull(file_name_array[1]);
                 }
+                let dateArray = date.split("/");
+                let hourArray = hour.split("/");
+                let dateUTC = Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]);
+                let dateFinal = dateUTC.toString();
+                console.lof("date final " +dateFinal);
                 let reg_date = functions.datetime();
-                db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: date, hour: hour, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
+                db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: date, hour: date, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error insert", data: null});
 
                     if(result.affectedRows !== 0){
