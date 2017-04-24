@@ -28,7 +28,7 @@ module.exports = {
                 console.log(hourArray);
                 let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
                 let dateFinal = dateUTC;
-                console.log("date final " +dateUTC);
+                console.log("date final " +dateUTC.toLocaleDateString() + " " + dateUTC.toLocaleTimeString());
                 let reg_date = functions.datetime();
                 db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: date, hour: date, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error insert", data: null});

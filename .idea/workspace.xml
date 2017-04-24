@@ -82,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/controller/upload_controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+              <caret line="30" column="107" lean-forward="false" selection-start-line="30" selection-start-column="107" selection-end-line="30" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -434,7 +434,7 @@
       <workItem from="1492742543115" duration="3121000" />
       <workItem from="1492834499007" duration="1628000" />
       <workItem from="1492979263161" duration="3129000" />
-      <workItem from="1493045679258" duration="1520000" />
+      <workItem from="1493045679258" duration="1683000" />
     </task>
     <task id="LOCAL-00001" summary="16/04/2017">
       <created>1492358972451</created>
@@ -625,11 +625,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493047338500</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="16/04/2017 17">
+      <created>1493047487235</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1493047487235</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31987000" />
+    <option name="totallyTimeSpent" value="32150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1082,7 +1089,7 @@
     <entry file="file://$PROJECT_DIR$/controller/upload_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <caret line="30" column="107" lean-forward="false" selection-start-line="30" selection-start-column="107" selection-end-line="30" selection-end-column="107" />
           <folding />
         </state>
       </provider>
