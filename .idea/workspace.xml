@@ -81,8 +81,8 @@
       <file leaf-file-name="upload_controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/upload_controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="391">
+              <caret line="26" column="129" lean-forward="false" selection-start-line="26" selection-start-column="129" selection-end-line="26" selection-end-column="129" />
               <folding />
             </state>
           </provider>
@@ -434,7 +434,7 @@
       <workItem from="1492742543115" duration="3121000" />
       <workItem from="1492834499007" duration="1628000" />
       <workItem from="1492979263161" duration="3129000" />
-      <workItem from="1493045679258" duration="554000" />
+      <workItem from="1493045679258" duration="1173000" />
     </task>
     <task id="LOCAL-00001" summary="16/04/2017">
       <created>1492358972451</created>
@@ -604,11 +604,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493046212918</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="16/04/2017 17">
+      <created>1493046243587</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1493046243587</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31021000" />
+    <option name="totallyTimeSpent" value="31640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1060,8 +1067,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/upload_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="391">
+          <caret line="26" column="129" lean-forward="false" selection-start-line="26" selection-start-column="129" selection-end-line="26" selection-end-column="129" />
           <folding />
         </state>
       </provider>

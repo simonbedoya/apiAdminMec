@@ -24,7 +24,7 @@ module.exports = {
                 }
                 let dateArray = date.split("/");
                 let hourArray = hour.split("/");
-                let dateUTC = Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]);
+                let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
                 let dateFinal = dateUTC.toString();
                 console.log("date final " +dateFinal);
                 let reg_date = functions.datetime();
