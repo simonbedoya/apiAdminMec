@@ -80,6 +80,11 @@ exports.random = function random(length, chars) {
     return path;
 };
 
+exports.convertDateEsp = function convertDateEsp(date) {
+    let dateArray = date.split("/");
+    return `20${dateArray[2]}/${dateArray[0]}/${dateArray[1]}`;
+};
+
 exports.convertHour = function convertHour(hour) {
     return String(`${hour}:00:00`);
 };

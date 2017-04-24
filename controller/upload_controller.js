@@ -27,7 +27,7 @@ module.exports = {
                 let hourArray = hour.split(":");
                 console.log(hourArray);
                 let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
-                let dateFinal = functions.convertDate(dateUTC.toLocaleDateString("es-CO",{year:"2-digit",month:"2-digit", day:"2-digit"}));
+                let dateFinal = functions.convertDateEsp(dateUTC.toLocaleDateString("es-CO",{year:"2-digit",month:"2-digit", day:"2-digit"}));
                 let hourFinal = dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
                 console.log("date final " +dateFinal + " " + dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false}));
                 let reg_date = functions.datetime();
