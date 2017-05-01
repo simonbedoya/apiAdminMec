@@ -21,6 +21,7 @@ let accelerometer = require('./accelerometer');
 let wifi = require('./wifi');
 let location = require('./location');
 let upload = require('./upload');
+let event = require('./event');
 let sensorController = require('../controller/sensor_controller');
 
 /* GET home page. */
@@ -161,6 +162,7 @@ router.use('/accelerometer',accelerometer);
 router.use('/wifi',wifi);
 router.use('/location',location);
 router.use('/upload',upload);
+router.use('/event',event);
 
 module.exports = router;
 

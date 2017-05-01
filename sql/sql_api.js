@@ -31,7 +31,7 @@ module.exports = {
     query_getCpu: "SELECT STATUS_CPU, DESCRIPT_CPU, ERROR_CPU FROM TBL_CPU WHERE PK_SENSOR = ${pk_sensor}",
     query_verifyGps: "SELECT count(*) AS counter FROM TBL_GPS WHERE PK_SENSOR = ${pk_sensor}",
     query_registerGps: "INSERT INTO TBL_GPS (PK_SENSOR, STATUS_GPS, DESCRIPT_GPS, BAUDRATE_GPS, MSJNMEA, ERROR_GPS, UPDATEDATE_GPS) VALUES (${pk_sensor},'${status}','${descript}',${baudRate},'${msjNMEA}','${error}','${date}')",
-    query_updateGps: "UPDATE TBL_GPS SET STATUS_GPS = '${status}', DESCRIPT_GPS = '${descript}', BAUDRATE_GPS = ${baudRate}, MSJNMEA = '${+msjNMEA}', ERROR_GPS = '${error}', UPDATEDATE_GPS = '${date}' WHERE PK_SENSOR = ${pk_sensor}",
+    query_updateGps: "UPDATE TBL_GPS SET STATUS_GPS = '${status}', DESCRIPT_GPS = '${descript}', BAUDRATE_GPS = ${baudRate}, MSJNMEA = '${msjNMEA}', ERROR_GPS = '${error}', UPDATEDATE_GPS = '${date}' WHERE PK_SENSOR = ${pk_sensor}",
     query_getGps: "SELECT STATUS_GPS, DESCRIPT_GPS, BAUDRATE_GPS, MSJNMEA, ERROR_GPS FROM TBL_GPS WHERE PK_SENSOR = ${pk_sensor}",
     query_verifyRtc: "SELECT count(*) AS counter FROM TBL_RTC WHERE PK_SENSOR = ${pk_sensor}",
     query_registerRtc: "INSERT INTO TBL_RTC (PK_SENSOR, STATUS_RTC, DESCRIPT_RTC, DATEHOUR_RTC, ERROR_RTC, UPDATEDATE_RTC) VALUES (${pk_sensor},'${status}','${descript}','${dateHour}','${error}','${date}')",
@@ -41,5 +41,9 @@ module.exports = {
     query_registerWifi: "INSERT INTO TBL_WIFI (PK_SENSOR, STATUS_WIFI, DESCRIPT_WIFI, SSID_WIFI, IPADR_WIFI, MACADR_WIFI, ERROR_WIFI, UPDATEDATE_WIFI) VALUES (${pk_sensor},'${status}','${descript}','${ssid}','${ipAdr}','${macAdr}','${error}','${date}')",
     query_updateWifi: "UPDATE TBL_WIFI SET STATUS_WIFI = '${status}', DESCRIPT_WIFI = '${descript}', SSID_WIFI = '${ssid}', IPADR_WIFI = '${ipAdr}', MACADR_WIFI = '${macAdr}', ERROR_WIFI = '${error}', UPDATEDATE_WIFI = '${date}' WHERE PK_SENSOR = ${pk_sensor}",
     query_getWifi: "SELECT STATUS_WIFI, DESCRIPT_WIFI, SSID_WIFI, IPADR_WIFI, MACADR_WIFI, ERROR_WIFI FROM TBL_WIFI WHERE PK_SENSOR = ${pk_sensor}",
-    query_registerNotification: "INSERT INTO TBL_NOTIFICATION (PK_SENSOR, TYPE_NOTIFICATION, TITLE_NOTIFICATION, MSG_NOTIFICATION, REGISTER_NOTIFICATION) VALUES (${pk_sensor}, '${type}', '${title}', '${msg}', '${date}')"
+    query_registerNotification: "INSERT INTO TBL_NOTIFICATION (PK_SENSOR, TYPE_NOTIFICATION, TITLE_NOTIFICATION, MSG_NOTIFICATION, REGISTER_NOTIFICATION) VALUES (${pk_sensor}, '${type}', '${title}', '${msg}', '${date}')",
+    query_verifyEvent: "SELECT count(*) AS counter FROM TBL_EVENTS WHERE PK_SENSOR = ${pk_sensor}",
+    query_registerEvent: "INSERT INTO TBL_EVENTS (PK_SENSOR, DURATION_W_STA, DURATION_W_LTA, TRIGGER_ON, TRIGGER_OFF, DURATION_PRE, DURATION_POST, DURATION_MIN) VALUES (${pk_sensor},${d_w_sta}, ${d_w_lta}, ${t_on}, ${t_off}, ${d_pre}, ${d_pos}, ${d_min})",
+    query_updateEvent: "UPDATE TBL_EVENTS SET DURATION_W_STA = ${d_w_sta}, DURATION_W_LTA = ${d_w_lta}, TRIGGER_ON = ${t_on}, TRIGGER_OFF = ${t_off}, DURATION_PRE = ${d_pre}, DURATION_POST = ${d_pos}, DURATION_MIN = ${d_min} WHERE PK_SENSOR = ${pk_sensor}",
+    query_getEvent: "SELECT DURATION_W_STA, DURATION_W_LTA, TRIGGER_ON, TRIGGER_OFF, DURATION_PRE, DURATION_POST, DURATION_MIN FROM TBL_EVENTS WHERE PK_SENSOR = ${pk_sensor}"
 };
