@@ -29,7 +29,7 @@ module.exports = {
                 let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
                 let dateFinal = functions.convertDateEsp(dateUTC.toLocaleDateString("es-CO",{year:"2-digit",month:"2-digit", day:"2-digit"}));
                 let hourFinal = dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
-                console.log("date final " +dateFinal + " " + dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false}));
+                console.log("date final " +dateFinal + " " + hourFinal);
                 let reg_date = functions.datetime();
                 db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: dateFinal, hour: hourFinal, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error insert", data: null});
@@ -124,6 +124,23 @@ module.exports = {
                 }
             }
         )
+    },
+    registerNotification: function (pk_sensor,type,title,msgg) {
+        return new Promise(
+            function (fullfill) {
+                let sql = template(sqlQuery.query_registerNotification,{pk_sensor: pk_sensor, type: type, title: title, msg: msgg, date: functions.datetime()});
+                console.log(sql);
+                db.query(sql, function (err, result) {
+                    console.log(err);
+                    if (err) return fullfill({hcode: 202, code: "002", msg: "Error", data: null});
+
+                    if (result.affectedRows !== 0) {
+                        fullfill({hcode: 200, code: "001", msg: "terminate test", data: null});
+                    } else {
+                        fullfill({hcode: 202, code: "002", msg: "Error", data: null});
+                    }
+                });
+            })
     }
 };
 

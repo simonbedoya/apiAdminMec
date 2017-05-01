@@ -40,5 +40,6 @@ module.exports = {
     query_verifyWifi: "SELECT count(*) AS counter FROM TBL_WIFI WHERE PK_SENSOR = ${pk_sensor}",
     query_registerWifi: "INSERT INTO TBL_WIFI (PK_SENSOR, STATUS_WIFI, DESCRIPT_WIFI, SSID_WIFI, IPADR_WIFI, MACADR_WIFI, ERROR_WIFI, UPDATEDATE_WIFI) VALUES (${pk_sensor},'${status}','${descript}','${ssid}','${ipAdr}','${macAdr}','${error}','${date}')",
     query_updateWifi: "UPDATE TBL_WIFI SET STATUS_WIFI = '${status}', DESCRIPT_WIFI = '${descript}', SSID_WIFI = '${ssid}', IPADR_WIFI = '${ipAdr}', MACADR_WIFI = '${macAdr}', ERROR_WIFI = '${error}', UPDATEDATE_WIFI = '${date}' WHERE PK_SENSOR = ${pk_sensor}",
-    query_getWifi: "SELECT STATUS_WIFI, DESCRIPT_WIFI, SSID_WIFI, IPADR_WIFI, MACADR_WIFI, ERROR_WIFI FROM TBL_WIFI WHERE PK_SENSOR = ${pk_sensor}"
+    query_getWifi: "SELECT STATUS_WIFI, DESCRIPT_WIFI, SSID_WIFI, IPADR_WIFI, MACADR_WIFI, ERROR_WIFI FROM TBL_WIFI WHERE PK_SENSOR = ${pk_sensor}",
+    query_registerNotification: "INSERT INTO TBL_NOTIFICATION (PK_SENSOR, TYPE_NOTIFICATION, TITLE_NOTIFICATION, MSG_NOTIFICATION, REGISTER_NOTIFICATION) VALUES (${pk_sensor}, '${type}', '${title}', '${msg}', '${date}')"
 };
