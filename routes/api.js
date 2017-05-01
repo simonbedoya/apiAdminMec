@@ -53,7 +53,8 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post("/auth", function (req,res) {
-    console.log(req.body);
+    console.log("body " + req.body);
+    console.log("serial " + req.body.serial);
    var serial = req.body.serial;
 
    var sql = "SELECT pk_sensor FROM TBL_SENSOR WHERE serial_sensor = '"+serial+"' AND status_sensor = 'Activo'";
