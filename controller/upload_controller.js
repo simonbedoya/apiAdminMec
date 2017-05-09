@@ -28,7 +28,7 @@ module.exports = {
                 console.log(hourArray);
                 let dateUTC = new Date(Date.UTC(dateArray[0],dateArray[1]-1,dateArray[2],hourArray[0],hourArray[1],hourArray[2]));
                 let dateFinal = functions.convertDateEsp(dateUTC.toLocaleDateString("es-CO",{year:"2-digit",month:"2-digit", day:"2-digit"}));
-                let hourFinal = dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
+                let hourFinal = dateUTC.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', sencond:'2-digit', hour12: false});
                 console.log("date final " +dateFinal + " " + hourFinal);
                 let reg_date = functions.datetime();
                 db.query(template(sqlQuery.query_insertFile,{pk_sensor: pk_sensor, path_file: path_file, date: dateFinal, hour: hourFinal, reg_date: reg_date, pk_location: pk_location, axis: file_name_array[2], type: type}), function (err, result) {
