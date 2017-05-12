@@ -30,7 +30,7 @@ module.exports = {
     registerADC: function (pk_sensor, status, descript, sample, error) {
         return new Promise(
             function (fullfill) {
-                db.query(template(sqlQuery.query_registerAdc,{pk_sensor: pk_sensor, status: status, descript: descript, sample: sample, error: error, date: functions.datetime()}), function (err, result) {
+                db.query(template(sqlQuery.query_registerAdc,{pk_sensor: pk_sensor, status: status, descript: descript, samples: sample, error: error, date: functions.datetime()}), function (err, result) {
                     if (err) return fullfill({hcode: 500, code: "005", msg: "Internal error insert", data: null});
 
                     if(result.rowsAffected !== 0){
