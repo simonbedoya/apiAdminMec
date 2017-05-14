@@ -91,6 +91,7 @@ router.post('/file', function (req,res) {
             if(correct === arrOut.length){
                 let socket = socketIoClient('socket.plataformamec.com');
                 socket.on('connect', function () {
+                    console.log("se ha enviado uploadFile");
                     socket.emit('uploadFile',`{"pk_sensor": "${pk_sensor}", "type": "${type}"}`);
                     socket.disconnect();
                 });
